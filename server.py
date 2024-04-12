@@ -14,6 +14,10 @@ lessons.close()
 def render_home():
    return render_template('home.html')   
 
+@app.route('/start')
+def start_lesson():
+   return render_template('home.html')   
+
 @app.route('/learn/<id>', methods=['GET', 'POST'])
 def render_lesson(id):
     global data
