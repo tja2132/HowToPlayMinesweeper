@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+
+function display_lesson() {
+
+    let lesson = {{ result | tojson }}
+    let id = lesson.id || 1
+    let title = lesson.title || "Lesson Title"
+
+    var $displayDiv = $(".maincontent");
+    var $titleDiv = $(".lesson-title");
+    $displayDiv.empty();
+    $titleDiv.empty();
+
+    $titleDiv.append(`Lesson ${id}: ${title}`);
+
+    $displayDiv.append(`
+        <div> Lesson ${id}: ${title} </div>
+    `);
+
+
+}
+
+</script>
+
+<body onload="display_lesson()"></body>
+
+<div class="countainer">
+    <div class="maincontent">
+    </div>
+</div>
+
+
+{% endblock %}
