@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container homeContent">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mt-4 homeTitle">Welcome to the World of Pokémon!</h1>
+      <h3 class="homeTitle">Explore, Counter, and Discover!</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <br>
+      <p>Dive into the vast and enchanting world of Pokémon with Pokédex!
+        Explore the intricate details of every Pokémon, find the perfect counters
+        to your battles, and discover new Pokémon you've yet to encounter.</p>
+    </div>
+    <div class="col-md-4">
+      <br>
+      <p><strong><span class="emphasized-text">Get Started Now!</strong></span><br>Search for your favorite pokemon
+        above, or try clicking Pikachu's name below!</p>
+    </div>
+
+    <p><strong><span class="emphasized-text">Explore:</span></strong> Get to know your favorite Pokémon, from the
+      classic Pikachu to the elusive Mew, and everything in between.</p>
+    <div class="container">
+      <div class="row mb-2 align-items-center search-result-row">
+        <div class="col-sm-1 col-md-1">
+          <a href="/view/25">
+            <img src="https://raw.githubusercontent.com/Purukitto/pokemon-data.json/master/images/pokedex/hires/025.png"
+              class="img-fluid pokemon-image-inline" alt="An image of Pikachu" style="width: 100%;">
+          </a>
+        </div>
+        <div class="col-sm-1 col-md-1">
+          <p><strong>ID:</strong> 25</p>
+        </div>
+        <div class="col-sm-2 col-md-3">
+          <p><strong>Name:</strong> <a href="/view/25">Pikachu</a></p>
+        </div>
+        <div class="col-sm-2 col-md-3">
+          <p><strong>Species:</strong> Mouse Pokémon</p>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <p><strong>Type:</strong> Electric</p>
+        </div>
+      </div>
+    </div>
+
+    <p><strong><span class="emphasized-text">Counter:</span></strong> Strategize your battles with our comprehensive
+      guide on which Pokémon best counters others, ensuring your victory in the arena.</p>
+
+    <div class="row container homeSearchButtons">
+      <div class="col-sm-2 col-md-2"></div>
+      <div class="col-sm-3 col-md-3">
+        <a class="btn btn-primary" href="/?search=Ground" id="findCounters">Find Counters for Pikachu</a>
+      </div>
+      <div class="col-sm-1 col-md-1"></div>
+      <div class="col-sm-3 col-md-3">
+        <a class="btn btn-primary" href="/?search=Electric" id="findSimilar">Find Similar to Pikachu</a>
+      </div>
+      <div class="col-sm-2 col-md-2"></div>
+    </div>
+    <p><strong><span class="emphasized-text">Discover:</span></strong> Unearth Pokémon you've never seen before. Try
+      clicking on one of the featured Pokémon below!</p>
+  </div>
+</div>
+<div class="featured"></div>
+<div class="alertMessage"></div>
+<div class="searchHeader"></div>
+<div class="resultsList"></div>
+{% endblock %}

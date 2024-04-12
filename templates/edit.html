@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Edit Pokémon</h2>
+    <form action="/edit/{{ id }}" method="POST">
+        <div class="form-group">
+            <label for="nameEnglish">Name</label>
+            <input type="text" class="form-control" id="nameEnglish" name="nameEnglish" required>
+        </div>
+        <div class="form-group">
+            <label for="species">Species</label>
+            <input type="text" class="form-control" id="species" name="species" required>
+        </div>
+        <div class="form-group">
+            <label for="types">Types</label>
+            <input type="text" class="form-control" id="types" name="types" placeholder="Separate types with a comma, e.g., Fire, Flying">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="baseHP">HP</label>
+                <input type="number" class="form-control" id="baseHP" name="base[HP]" min="1" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="baseAttack">Attack</label>
+                <input type="number" class="form-control" id="baseAttack" name="base[Attack]" min="1" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="baseDefense">Defense</label>
+                <input type="number" class="form-control" id="baseDefense" name="base[Defense]" min="1" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="baseSpAttack">Sp. Attack</label>
+                <input type="number" class="form-control" id="baseSpAttack" name="base[Sp. Attack]" min="1" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="baseSpDefense">Sp. Defense</label>
+                <input type="number" class="form-control" id="baseSpDefense" name="base[Sp. Defense]" min="1" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="baseSpeed">Speed</label>
+                <input type="number" class="form-control" id="baseSpeed" name="base[Speed]" min="1" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="height">Height (meters)</label>
+                <input type="text" class="form-control" id="height" name="height" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="weight">Weight (kilograms)</label>
+                <input type="text" class="form-control" id="weight" name="weight" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="eggGroups">Egg Groups</label>
+            <input type="text" class="form-control" id="eggGroups" name="eggGroups" placeholder="Separate groups with a comma, e.g., Monster, Dragon">
+        </div>
+        <div class="form-group">
+            <label for="abilities">Abilities</label>
+            <input type="text" class="form-control" id="abilities" name="abilities" placeholder="Format: Ability1 (Normal), Ability2 (Hidden)">
+        </div>
+        <div class="form-group">
+            <label for="genderRatio">Gender Ratio</label>
+            <input type="text" class="form-control" id="genderRatio" name="genderRatio">
+        </div>
+        <input type="hidden" id="id" name="id">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-danger" id="discardChanges">Discard Changes</button>
+    </form>
+    <br><br>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let pokemonData = {{ result | tojson }};
+        
+        document.getElementById('nameEnglish').value = pokemonData.name.english || '';
+        document.getElementById('species').value = pokemonData.species || '';
+        document.getElementById('types').value = pokemonData.type ? pokemonData.type.join(', ') : '';
+        document.getElementById('baseHP').value = pokemonData.base.HP || '';
+        document.getElementById('baseAttack').value = pokemonData.base.Attack || '';
+        document.getElementById('baseDefense').value = pokemonData.base.Defense || '';
+        document.getElementById('baseSpAttack').value = pokemonData.base['Sp. Attack'] || '';
+        document.getElementById('baseSpDefense').value = pokemonData.base['Sp. Defense'] || '';
+        document.getElementById('baseSpeed').value = pokemonData.base.Speed || '';
+        document.getElementById('description').value = pokemonData.description || '';
+        document.getElementById('height').value = pokemonData.profile.height || '';
+        document.getElementById('weight').value = pokemonData.profile.weight || '';
+        document.getElementById('eggGroups').value = pokemonData.profile.egg ? pokemonData.profile.egg.join(', ') : '';
+        document.getElementById('abilities').value = pokemonData.profile.ability ? pokemonData.profile.ability.map(a => `${a[0]} (${a[1] === "true" ? 'Hidden' : 'Normal'})`).join(', ') : '';
+        document.getElementById('genderRatio').value = pokemonData.profile.gender || '';
+        document.getElementById('id').value = pokemonData.id || '';
+    });
+
+    document.getElementById('discardChanges').addEventListener('click', function() {
+        if (confirm('Are you sure you want to discard these edits?')) {
+            window.location.href = '/view/' + document.getElementById('id').value;
+        }
+    });
+</script>
+
+{% endblock %}

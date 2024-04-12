@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div id="successMessageContainer" style="display:none;"></div>
+    <h2>Add New Pokémon</h2>
+    <form id="addPokemonForm">
+        <div class="form-group">
+            <label for="nameEnglish">Name</label>
+            <input type="text" class="form-control" id="nameEnglish" name="nameEnglish" required>
+        </div>
+        <div class="form-group">
+            <label for="species">Species</label>
+            <input type="text" class="form-control" id="species" name="species" required>
+        </div>
+        <div class="form-group">
+            <label for="types">Types</label>
+            <input type="text" class="form-control" id="types" name="types" placeholder="Separate types with a comma, e.g., Fire, Flying" required>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="baseHP">HP</label>
+                <input type="number" class="form-control" id="baseHP" name="base[HP]" min="1" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="baseAttack">Attack</label>
+                <input type="number" class="form-control" id="baseAttack" name="base[Attack]" min="1" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="baseDefense">Defense</label>
+                <input type="number" class="form-control" id="baseDefense" name="base[Defense]" min="1" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="baseSpAttack">Sp. Attack</label>
+                <input type="number" class="form-control" id="baseSpAttack" name="base[Sp. Attack]" min="1" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="baseSpDefense">Sp. Defense</label>
+                <input type="number" class="form-control" id="baseSpDefense" name="base[Sp. Defense]" min="1" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="baseSpeed">Speed</label>
+                <input type="number" class="form-control" id="baseSpeed" name="base[Speed]" min="1" required>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="height">Height (meters)</label>
+                <input type="text" class="form-control" id="height" name="height" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="weight">Weight (kilograms)</label>
+                <input type="text" class="form-control" id="weight" name="weight" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="eggGroups">Egg Groups</label>
+            <input type="text" class="form-control" id="eggGroups" name="eggGroups" placeholder="Separate groups with a comma, e.g., Monster, Dragon">
+        </div>
+        <div class="form-group">
+            <label for="abilities">Abilities</label>
+            <input type="text" class="form-control" id="abilities" name="abilities" placeholder="Format: Ability1 (Normal), Ability2 (Hidden)">
+        </div>
+        <div class="form-group">
+            <label for="genderRatio">Gender Ratio (M:F)</label>
+            <input type="text" class="form-control" id="genderRatio" name="genderRatio" placeholder="e.g: 50:50, 75:25...">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('addPokemonForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Check if all fields have been entered
+        const nameEnglish = document.getElementById('nameEnglish').value.trim();
+        const species = document.getElementById('species').value.trim();
+        const types = document.getElementById('types').value.trim();
+        const description = document.getElementById('description').value.trim();
+        const height = document.getElementById('height').value.trim();
+        const weight = document.getElementById('weight').value.trim();
+        const eggGroups = document.getElementById('eggGroups').value.trim();
+        const abilities = document.getElementById('abilities').value.trim();
+        const genderRatio = document.getElementById('genderRatio').value.trim();
+
+        if (!nameEnglish || !species || !types || !height || !weight || !eggGroups || !abilities || !genderRatio) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        var formData = $(this).serialize();
+        $.ajax({
+            url: '/add',
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                $('#successMessageContainer').html('<div class="alert alert-success" role="alert">New item successfully created. <a href="/view/' + response.id + '">See it here.</a></div>').show();
+                
+                // Reset the form
+                $('#addPokemonForm')[0].reset();
+                // Set focus to the first input field for a new entry
+                $('#nameEnglish').focus();
+            },
+            error: function(xhr, status, error) {
+                console.log("Error: " + error);
+            }
+        });
+    });
+
+</script>
+
+{% endblock %}
