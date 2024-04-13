@@ -8,7 +8,12 @@ $(document).ready(function() {
     let lesson = {{ result | tojson }};
     let imgs = lesson.img;
 
+    $("#quizBtn").hide();
+
     function updateImageDisplay() {
+        if (currentIndex === imgs.length - 1){
+            $("#quizBtn").show();
+        }
         // Update the source of the image element
         $("#imageDisplay").attr('src', imgs[currentIndex]);
     }
@@ -20,6 +25,7 @@ $(document).ready(function() {
         $(".lesson-title").text(`Lesson ${id}: ${title}`);
         updateImageDisplay(); // Update image when the page loads
     }
+
 
     // Next button functionality
     $("#nextBtn").click(function() {
@@ -42,6 +48,7 @@ $(document).ready(function() {
         <div>
             <button id="prevBtn">Previous</button>
             <button id="nextBtn">Next</button>
+            <a href="/quiz/{{ result.id }}" class="button" id="quizBtn">Go to Quiz</a>
         </div>
         <img id="imageDisplay" alt="Lesson Image">
     </div>

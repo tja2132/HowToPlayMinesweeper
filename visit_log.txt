@@ -1,0 +1,76 @@
+Home visited at 2024-04-12 19:21:18.546005
+Start visited at 2024-04-12 19:21:19.786999
+Learn 1 visited at 2024-04-12 19:21:19.790989
+Learn 1 visited at 2024-04-12 19:21:20.390677
+Learn 1 visited at 2024-04-12 19:21:42.762138
+Learn 1 visited at 2024-04-12 19:25:14.859304
+Learn 1 visited at 2024-04-12 19:25:40.649571
+Learn 1 visited at 2024-04-12 19:25:44.649800
+Learn 1 visited at 2024-04-12 19:26:00.800988
+Learn 1 visited at 2024-04-12 19:26:21.642909
+Learn 1 visited at 2024-04-12 19:26:33.145951
+Learn 1 visited at 2024-04-12 19:26:39.458013
+Learn 1 visited at 2024-04-12 19:29:48.354825
+Home visited at 2024-04-12 19:29:50.148801
+Start visited at 2024-04-12 19:29:50.909492
+Learn 1 visited at 2024-04-12 19:29:50.912484
+Learn 1 visited at 2024-04-12 19:30:01.962336
+Home visited at 2024-04-12 19:30:02.896793
+Start visited at 2024-04-12 19:30:03.612258
+Learn 1 visited at 2024-04-12 19:30:03.616248
+Learn 3 visited at 2024-04-12 19:30:05.387751
+Learn 2 visited at 2024-04-12 19:30:05.827325
+Learn 4 visited at 2024-04-12 19:30:06.161561
+Learn 5 visited at 2024-04-12 19:30:06.525557
+Learn 5 visited at 2024-04-12 19:30:16.112815
+Learn 5 visited at 2024-04-12 19:30:23.425373
+Learn 5 visited at 2024-04-12 19:30:45.873055
+Learn 5 visited at 2024-04-12 19:30:59.050262
+Learn 5 visited at 2024-04-12 19:31:33.785570
+Learn 5 visited at 2024-04-12 19:31:51.473719
+Learn 5 visited at 2024-04-12 19:32:04.074466
+Learn 5 visited at 2024-04-12 19:33:31.433672
+Learn 5 visited at 2024-04-12 19:33:37.265219
+Learn 5 visited at 2024-04-12 19:33:49.313099
+Learn 5 visited at 2024-04-12 19:34:11.280699
+Learn 5 visited at 2024-04-12 19:34:56.979262
+Learn 5 visited at 2024-04-12 19:35:09.441646
+Learn 5 visited at 2024-04-12 19:36:05.809718
+Quiz 5 visited at 2024-04-12 19:36:06.973613
+Home visited at 2024-04-12 19:36:09.111234
+Learn 1 visited at 2024-04-12 19:36:10.245339
+Quiz 1 visited at 2024-04-12 19:36:12.675936
+Quiz 1 visited at 2024-04-12 19:38:21.531400
+Learn 2 visited at 2024-04-12 19:38:24.778424
+Quiz 2 visited at 2024-04-12 19:38:29.204333
+Learn 3 visited at 2024-04-12 19:38:31.052953
+Quiz 3 visited at 2024-04-12 19:38:33.206793
+Learn 4 visited at 2024-04-12 19:38:34.080502
+Quiz 4 visited at 2024-04-12 19:38:35.400033
+Learn 5 visited at 2024-04-12 19:38:36.125899
+Quiz 5 visited at 2024-04-12 19:38:37.186594
+Learn 1 visited at 2024-04-12 19:38:39.998960
+Learn 2 visited at 2024-04-12 19:38:40.459259
+Learn 1 visited at 2024-04-12 19:38:40.777417
+Learn 4 visited at 2024-04-12 19:38:41.214766
+Learn 5 visited at 2024-04-12 19:38:41.759315
+Learn 1 visited at 2024-04-12 19:38:42.545727
+Home visited at 2024-04-12 19:38:47.752542
+Home visited at 2024-04-12 19:39:01.880789
+Home visited at 2024-04-12 19:39:18.769436
+Start visited at 2024-04-12 19:39:20.422737
+Learn 1 visited at 2024-04-12 19:39:20.425730
+Learn 2 visited at 2024-04-12 19:39:24.423367
+Learn 3 visited at 2024-04-12 19:39:25.224846
+Learn 4 visited at 2024-04-12 19:39:26.020734
+Learn 5 visited at 2024-04-12 19:39:27.084162
+Learn 1 visited at 2024-04-12 19:39:28.186332
+Learn 1 visited at 2024-04-12 19:39:42.192702
+Learn 1 visited at 2024-04-12 19:39:45.425277
+Learn 1 visited at 2024-04-12 19:39:49.512628
+Quiz 1 visited at 2024-04-12 19:39:51.220615
+Quiz 1 visited at 2024-04-12 19:39:53.152906
+Learn 4 visited at 2024-04-12 19:39:53.852605
+Quiz 4 visited at 2024-04-12 19:39:55.284912
+Learn 3 visited at 2024-04-12 19:39:56.102329
+Quiz 3 visited at 2024-04-12 19:39:56.738632
