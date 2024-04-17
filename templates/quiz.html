@@ -6,50 +6,24 @@
 $(document).ready(function() {
     let currentIndex = 0;
     let lesson = {{ result | tojson }};
-    let imgs = lesson.img;
+    let img = lesson.quiz;
 
     $("#quizBtn").hide();
 
-    function updateImageDisplay() {
-        if (currentIndex === imgs.length - 1){
-            $("#quizBtn").show();
-        }
-        // Update the source of the image element
-        $("#imageDisplay").attr('src', imgs[currentIndex]);
-    }
-
-    function displayLesson() {
+    function displayQuiz() {
         let id = lesson.id || 1;
         let title = lesson.title || "Quiz Title";
 
         $(".lesson-title").text(`${title} Quiz`);
-        updateImageDisplay(); // Update image when the page loads
+        $("#imageDisplay").attr('src', img);
     }
 
-
-    // Next button functionality
-    $("#nextBtn").click(function() {
-        currentIndex = (currentIndex + 1) % imgs.length; // Cycle forward through the images
-        updateImageDisplay();
-    });
-
-    // Previous button functionality
-    $("#prevBtn").click(function() {
-        currentIndex = (currentIndex - 1 + imgs.length) % imgs.length; // Cycle backward through the images
-        updateImageDisplay();
-    });
-
-    displayLesson();
+    displayQuiz();
 });
 </script>
 
 <div class="container">
     <div class="maincontent">
-        <div>
-            <button id="prevBtn">Previous</button>
-            <button id="nextBtn">Next</button>
-            <a href="/quiz/{{ result.id }}" class="button" id="quizBtn">Go to Quiz</a>
-        </div>
         <img id="imageDisplay" alt="Lesson Image">
     </div>
 </div>
