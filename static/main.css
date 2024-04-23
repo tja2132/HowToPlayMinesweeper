@@ -4,6 +4,53 @@
 }
 
 img {
-    width: 70%;
+    width: 100%;
 }
 
+.lesson-button {
+    background-color: #0044cc;
+
+}
+
+.lesson-img-container {
+    height: 300px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .header {
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    color: #333;
+    font-size: 2em;
+  }
+  .header p {
+    color: #666;
+    font-size: 1em;
+  }
+  .minesweeper-img {
+    width: 60%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+  }
+  .getstartedbutton {
+    background-color: #0044cc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 60px;
+  }
+
+  .imageDisplay{
+    margin-top: 60px;
+  }

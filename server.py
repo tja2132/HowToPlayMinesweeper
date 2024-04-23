@@ -32,7 +32,6 @@ def start_lesson():
    log_visit('Start')
    return redirect(url_for('render_lesson', id=1))
 
-
 @app.route('/learn/<id>', methods=['GET', 'POST'])
 def render_lesson(id):
     result = get_data_by_id(id)

@@ -43,14 +43,38 @@ $(document).ready(function() {
 });
 </script>
 
-<div class="container">
+
     <div class="maincontent">
-        <div>
-            <button id="prevBtn">Previous</button>
-            <button id="nextBtn">Next</button>
-            <a href="/quiz/{{ result.id }}" class="button" id="quizBtn">Go to Quiz</a>
-        </div>
-        <img id="imageDisplay" alt="Lesson Image">
+        <div class="container">
+            <div class="row align-items-center mb-3">
+                <br><br><br><br><br>
+            </div>
+
+            <div class="row align-items-center mb-3">
+              <!-- Previous button on the left -->
+              <div class="col-1">
+                <button id="prevBtn" class="btn btn-secondary lesson-button">←</button>
+              </div>
+              <!-- Image in the center with flexible space on either side -->
+              <div class="col-10">
+                <div class="container lesson-img-container">
+                <img id="imageDisplay" src="" alt="Lesson Image" class="img-fluid">
+            </div>
+              </div>
+              <!-- Next button on the right -->
+              <div class="col-1">
+                <button id="nextBtn" class="btn btn-secondary lesson-button">→</button>
+              </div>
+            </div>
+          
+            <!-- Go to Quiz button below the image -->
+            <div class="row">
+              <div class="col text-center">
+                <a href="/quiz/{{ result.id }}" class="btn btn-primary" id="quizBtn">Go to Quiz</a>
+              </div>
+            </div>
+          </div>
+          
     </div>
-</div>
+
 {% endblock %}
