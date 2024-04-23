@@ -44,6 +44,11 @@ def render_quiz(id):
     log_visit(f'Quiz {id}')
     return render_template('quiz.html', result=result, id=id)  
 
+@app.route('/play', methods=['GET', 'POST'])
+def render_play():
+    log_visit(f'Play')
+    return render_template('play.html')  
+
 if __name__ == '__main__':
    app.run(debug = True)
 
