@@ -9,11 +9,30 @@ $(document).ready(function() {
     let imgs = lesson.img;
 
     $("#quizBtn").hide();
+    $("#backBtn").text(`Home`);
 
     function updateImageDisplay() {
         if (currentIndex === imgs.length - 1){
             $("#quizBtn").show();
+            $("#nextBtn").hide();
         }
+        else
+        {
+          $("#nextBtn").show();
+        }
+
+        if (currentIndex === 0){
+           $("#prevBtn").hide();
+        }
+        else{
+          $("#prevBtn").show();
+        }
+
+       
+     
+        
+        
+
         // Update the source of the image element
         $("#imageDisplay").attr('src', imgs[currentIndex]);
     }

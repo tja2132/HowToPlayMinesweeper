@@ -23,25 +23,28 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a href="/learn/1" class="btn btn-outline-secondary ms-auto add-btn">1</a>
-      <a href="/learn/2" class="btn btn-outline-secondary ms-auto add-btn">2</a>
-      <a href="/learn/3" class="btn btn-outline-secondary ms-auto add-btn">3</a>
-      <a href="/learn/4" class="btn btn-outline-secondary ms-auto add-btn">4</a>
-      <a href="/learn/5" class="btn btn-outline-secondary ms-auto add-btn">5</a>
-      <a href="/play" class="btn btn-outline-secondary ms-auto add-btn">Play</a>
 
-      <div class="col-3"></div>
-      <div class="navbar-brand lesson-title" >Welcome</div>
 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container d-flex align-items-center" style="justify-content: space-between;">
+    <!-- Button on the left with flex-grow set to 0 to keep it on the far left -->
+    <a href="/" class="btn btn-outline-secondary" style="flex-grow: 0;" id="backBtn"> 
+      Home
+    </a>
 
-        <div class="col-3"></div>
-
-      </div>
+    <!-- Centered Welcome message with flex-grow to allow it to expand -->
+    <div class="navbar-brand text-center" style="flex-grow: 1; display: flex; justify-content: center;">
+      <div class="lesson-title">How to Play Minesweeper</div>
     </div>
-  </nav>
+
+    <!-- Positioned on the far right with flex-grow set to 0 to keep it on the far right -->
+    <div class="navbar-brand next-lesson" style="flex-grow: 0; flex-shrink: 0; text-align: right;">
+      Up Next: Lesson 1, The Basics
+    </div>
+  </div>
+</nav>
+
+  
 
   <div class="container">
     {% block content %}

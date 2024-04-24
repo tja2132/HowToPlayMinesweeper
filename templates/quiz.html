@@ -2,6 +2,7 @@
 
 {% block content %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../static/mines.js"></script>
 <script>
 $(document).ready(function() {
     let currentIndex = 0;
@@ -9,16 +10,21 @@ $(document).ready(function() {
     let img = lesson.quiz;
 
     $("#quizBtn").hide();
+  
 
     function displayQuiz() {
         let id = lesson.id || 1;
         let title = lesson.title || "Quiz Title";
+
+        $("#backBtn").text(`Back to Lesson`);
+        $("#backBtn").attr('href', "/learn/{{ result.id }}");
 
         $(".lesson-title").text(`${title} Quiz`);
         $("#imageDisplay").attr('src', img);
     }
 
     displayQuiz();
+    initGame([1, 25, 49], 10, 10); 
 });
 </script>
 
@@ -26,5 +32,15 @@ $(document).ready(function() {
     <div class="maincontent">
         <img id="imageDisplay" alt="Lesson Image">
     </div>
+
+    <div class="game-container-mini">
+        <!-- <div class="top">
+          <div class="flag-box"><h1>0<span id="flags-left"></span></h1></div>
+          <button class="emoji-btn"><h1></h1></button>
+          <div class="timer-box"><h1><span id="timer">0</span></h1></div>
+        </div> -->
+        <div class="grid"></div>
+        <div id="result"></div>
+      </div>
 </div>
 {% endblock %}
