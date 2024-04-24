@@ -38,11 +38,12 @@ def render_lesson(id):
     log_visit(f'Learn {id}')
     return render_template('learn.html', result=result, id=id)  
 
-@app.route('/quiz/<id>', methods=['GET', 'POST'])
-def render_quiz(id):
+@app.route('/quiz/<id>/<component>', methods=['GET', 'POST'])
+def render_quiz(id, component):
     result = get_data_by_id(id)
-    log_visit(f'Quiz {id}')
-    return render_template('quiz.html', result=result, id=id)  
+    nextcomponent=str(int(component)+1)
+    log_visit(f'Quiz {id} component {component}')
+    return render_template('quiz.html', result=result, id=id, component=component, nextcomponent=nextcomponent)  
 
 @app.route('/play', methods=['GET', 'POST'])
 def render_play():

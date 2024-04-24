@@ -7,9 +7,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     let lesson = {{ result | tojson }};
+    let idx = {{ component | tojson }} - 1;
     let img = lesson.quiz;
     let isQuizComplete = false;
-    let currentIndex = 0;
+    let currentIndex = idx;
     let completeIndex = lesson.quiz_components - 1;
     
 
@@ -275,6 +276,7 @@ function handleSquareRightClick(e) {
             matches++;
         }
     });
+
     if (matches === bombAmount && squares.filter(square => square.classList.contains('flag')).length === bombAmount) {
         clearInterval(intervalRef); // Ensure intervalRef is defined and used if you have a timer
         // timer.innerHTML = 'WIN'; // Uncomment or ensure this element exists
@@ -283,16 +285,21 @@ function handleSquareRightClick(e) {
         isGameOver = true;
 
         if (currentIndex == completeIndex) {
-            alert("Great job! Please proceed to the next lesson")
+            // alert("Great job! Please proceed to the next lesson")
+            $("#hint").show();
+            $("#nextLesson").show();
+            $("#nextQuiz").hide();
+
+
         }
         else {
-            alert("Great job! Next quiz component")
-            currentIndex += 1;
-            displayQuiz(currentIndex);
+            $("#hint").show();
+            $("#nextQuiz").show();
+            $("#nextLesson").hide();
+
         }
     }
 }
-
 
     function displayQuiz(idx) {
         let id = lesson.id || 1;
@@ -302,16 +309,21 @@ function handleSquareRightClick(e) {
         $("#backBtn").attr('href', "/learn/{{ result.id }}");
 
         $(".lesson-title").text(`${title} Quiz`);
-        $("#imageDisplay").attr('src', img);
+        // $("#imageDisplay").attr('src', img);
+        $(".next-lesson").text(`Up Next: Lesson {{result.id+1}}`);
+
 
         console.log("Displaying quiz component", idx);
+
+        $("#hint").hide();
+        $("#nextLesson").hide();
+        $("#nextQuiz").hide();
 
         bombs = lesson.bombs[idx]
         clicked_squares = lesson.clicked_squares[idx]
         l = lesson.length[idx];
         w = lesson.width[idx];;
 
-        clearExistingBoard();
         initGame(bombs, l, w);
         clickSquaresByIds(clicked_squares)
     }
@@ -323,10 +335,12 @@ function handleSquareRightClick(e) {
 </script>
 
 <div class="container">
-    <div class="maincontent">
+    <!-- <div class="maincontent">
         <img id="imageDisplay" alt="Lesson Image">
-    </div>
+    </div> -->
 
+    <br><br>
+    <div class="quiztext"> Complete the puzzle to proceed to the next lesson!</div>
     <div class="game-container-mini">
         <!-- <div class="top">
           <div class="flag-box"><h1>0<span id="flags-left"></span></h1></div>
@@ -334,6 +348,10 @@ function handleSquareRightClick(e) {
           <div class="timer-box"><h1><span id="timer">0</span></h1></div>
         </div> -->
         <div class="grid-3x3"></div>
+        <!-- <div id="hint quiztext">Great job!</div> -->
+        <a class="btn btn-outline-secondary" href="/learn/{{ result.id + 1 }}" class="btn btn-primary" id="nextLesson">Lesson {{ result.id + 1 }}</a>
+        <a class="btn btn-outline-secondary" href="/quiz/{{ result.id }}/{{ nextcomponent }}" class="btn btn-primary" id="nextQuiz">Next Puzzle</a>
+
         <div id="result"></div>
       </div>
 </div>

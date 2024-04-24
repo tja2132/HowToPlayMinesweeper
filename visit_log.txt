@@ -331,3 +331,157 @@ Quiz 1 visited at 2024-04-24 16:41:55.660843
 Learn 1 visited at 2024-04-24 16:44:22.651925
 Quiz 1 visited at 2024-04-24 16:44:26.810357
 Quiz 1 visited at 2024-04-24 16:50:17.109183
+Home visited at 2024-04-24 17:56:43.246631
+Start visited at 2024-04-24 17:56:49.346833
+Learn 1 visited at 2024-04-24 17:56:49.352292
+Quiz 1 visited at 2024-04-24 17:56:53.163373
+Quiz 1 visited at 2024-04-24 17:57:54.114107
+Quiz 1 component 1 visited at 2024-04-24 17:59:38.480883
+Quiz static component mines.js visited at 2024-04-24 17:59:38.507744
+Quiz 1 component 1 visited at 2024-04-24 17:59:46.719514
+Quiz static component mines.js visited at 2024-04-24 17:59:46.728554
+Quiz 1 component 1 visited at 2024-04-24 18:00:07.962711
+Quiz static component mines.js visited at 2024-04-24 18:00:07.980831
+Quiz 1 component 1 visited at 2024-04-24 18:00:41.558240
+Quiz static component mines.js visited at 2024-04-24 18:00:41.573230
+Quiz 1 component 1 visited at 2024-04-24 18:01:21.275231
+Quiz static component mines.js visited at 2024-04-24 18:01:21.293497
+Quiz 1 component 1 visited at 2024-04-24 18:04:18.806246
+Quiz static component mines.js visited at 2024-04-24 18:04:18.824709
+Quiz 1 component 1 visited at 2024-04-24 18:04:29.989277
+Quiz static component mines.js visited at 2024-04-24 18:04:30.005305
+Quiz 1 component 1 visited at 2024-04-24 18:04:50.572327
+Quiz static component mines.js visited at 2024-04-24 18:04:50.586892
+Quiz 1 component 1 visited at 2024-04-24 18:05:15.139785
+Quiz static component mines.js visited at 2024-04-24 18:05:15.155249
+Quiz 1 component 1 visited at 2024-04-24 18:05:23.594132
+Quiz static component mines.js visited at 2024-04-24 18:05:23.613356
+Quiz 1 component 1 visited at 2024-04-24 18:05:48.580483
+Quiz static component mines.js visited at 2024-04-24 18:05:48.601296
+Quiz 1 component 1 visited at 2024-04-24 18:06:16.301368
+Quiz static component mines.js visited at 2024-04-24 18:06:16.317591
+Quiz 1 component 1 visited at 2024-04-24 18:06:38.614479
+Quiz static component mines.js visited at 2024-04-24 18:06:38.635104
+Quiz 1 component 1 visited at 2024-04-24 18:07:40.506557
+Quiz 1 component 1 visited at 2024-04-24 18:08:26.020195
+Quiz 1 component 1 visited at 2024-04-24 18:08:32.342643
+Quiz 1 component 1 visited at 2024-04-24 18:08:33.339873
+Quiz 1 component 1 visited at 2024-04-24 18:08:37.242573
+Home visited at 2024-04-24 18:08:55.543219
+Start visited at 2024-04-24 18:08:56.930855
+Learn 1 visited at 2024-04-24 18:08:56.934845
+Quiz 1 component 1 visited at 2024-04-24 18:09:03.460444
+Quiz 1 component 1 visited at 2024-04-24 18:09:21.593751
+Quiz static component mines.js visited at 2024-04-24 18:09:21.616543
+Quiz 1 component 1 visited at 2024-04-24 18:10:09.307002
+Quiz static component mines.js visited at 2024-04-24 18:10:09.325958
+Quiz 1 component 1 visited at 2024-04-24 18:10:38.046319
+Quiz 1 component 1 visited at 2024-04-24 18:10:55.440581
+Quiz 1 component 1 visited at 2024-04-24 18:11:09.448742
+Quiz 1 component 1 visited at 2024-04-24 18:11:18.302409
+Quiz static component mines.js visited at 2024-04-24 18:11:18.320667
+Quiz 1 component 1 visited at 2024-04-24 18:11:30.091020
+Quiz static component mines.js visited at 2024-04-24 18:11:30.107609
+Quiz 1 component 1 + 1 visited at 2024-04-24 18:11:31.282952
+Quiz static component mines.js visited at 2024-04-24 18:11:31.300321
+Quiz 1 component 1 visited at 2024-04-24 18:11:37.672617
+Quiz 1 component 1 visited at 2024-04-24 18:12:05.418283
+Quiz 1 component 1 visited at 2024-04-24 18:12:43.451409
+Quiz 1 component 1 visited at 2024-04-24 18:12:54.068824
+Quiz 1 component 1 visited at 2024-04-24 18:13:09.695911
+Quiz 1 component 1 visited at 2024-04-24 18:13:20.620325
+Quiz static component mines.js visited at 2024-04-24 18:13:20.635579
+Quiz 1 component 1 visited at 2024-04-24 18:13:21.826858
+Quiz static component mines.js visited at 2024-04-24 18:13:21.839076
+Quiz 1 component 1 visited at 2024-04-24 18:13:22.791226
+Quiz static component mines.js visited at 2024-04-24 18:13:22.803474
+Quiz 1 component 1 visited at 2024-04-24 18:13:59.561915
+Quiz 1 component 1 visited at 2024-04-24 18:14:37.605988
+Quiz 1 component 2 visited at 2024-04-24 18:14:39.167115
+Quiz 1 component 3 visited at 2024-04-24 18:14:40.878563
+Quiz 1 component 4 visited at 2024-04-24 18:14:41.911935
+Quiz 1 component 5 visited at 2024-04-24 18:14:42.496981
+Quiz 1 component 6 visited at 2024-04-24 18:14:43.053630
+Quiz 1 component 7 visited at 2024-04-24 18:14:44.807245
+Learn 1 visited at 2024-04-24 18:14:47.416675
+Learn 1 visited at 2024-04-24 18:15:10.583269
+Learn 1 visited at 2024-04-24 18:15:31.097586
+Quiz 1 component 1 visited at 2024-04-24 18:15:33.625614
+Quiz 1 component 1 visited at 2024-04-24 18:17:05.735511
+Quiz 1 component 1 visited at 2024-04-24 18:17:26.665061
+Quiz 1 component 1 visited at 2024-04-24 18:18:01.301996
+Quiz 1 component 2 visited at 2024-04-24 18:18:07.947585
+Learn 2 visited at 2024-04-24 18:18:17.839540
+Home visited at 2024-04-24 18:18:25.860915
+Start visited at 2024-04-24 18:18:27.115309
+Learn 1 visited at 2024-04-24 18:18:27.123253
+Quiz 1 component 1 visited at 2024-04-24 18:18:30.035069
+Learn 2 visited at 2024-04-24 18:18:33.823163
+Quiz 2 component 1 visited at 2024-04-24 18:18:50.828727
+Learn 2 visited at 2024-04-24 18:18:53.360783
+Learn 2 visited at 2024-04-24 18:19:31.452301
+Home visited at 2024-04-24 18:19:34.317483
+Quiz 1 component 1 visited at 2024-04-24 18:19:35.186478
+Quiz 1 component 1 visited at 2024-04-24 18:20:12.220961
+Quiz 1 component 2 visited at 2024-04-24 18:20:40.723513
+Quiz 1 component 2 visited at 2024-04-24 18:20:56.127374
+Learn 2 visited at 2024-04-24 18:21:02.629152
+Quiz 1 component 1 visited at 2024-04-24 18:21:10.716673
+Quiz 1 component 1 visited at 2024-04-24 18:21:19.597126
+Quiz 1 component 2 visited at 2024-04-24 18:21:28.309234
+Learn 2 visited at 2024-04-24 18:21:36.663366
+Learn 2 visited at 2024-04-24 18:22:45.356266
+Learn 2 visited at 2024-04-24 18:22:52.214402
+Learn 3 visited at 2024-04-24 18:22:56.479095
+Learn 4 visited at 2024-04-24 18:22:58.946503
+Learn 4 visited at 2024-04-24 18:23:13.644254
+Home visited at 2024-04-24 18:23:17.030203
+Home visited at 2024-04-24 18:23:19.606261
+Learn 2 visited at 2024-04-24 18:23:23.517789
+Quiz 2 component 1 visited at 2024-04-24 18:23:30.467636
+Quiz 2 component 1 visited at 2024-04-24 18:24:21.155243
+Quiz 2 component 1 visited at 2024-04-24 18:24:25.546163
+Quiz 4 component 1 visited at 2024-04-24 18:24:31.789895
+Learn 4 visited at 2024-04-24 18:24:41.822310
+Quiz 4 component 1 visited at 2024-04-24 18:24:52.323309
+Play visited at 2024-04-24 18:24:57.652250
+Play visited at 2024-04-24 18:26:36.013658
+Home visited at 2024-04-24 18:26:39.742304
+Home visited at 2024-04-24 18:27:04.940076
+Home visited at 2024-04-24 18:27:05.991849
+Home visited at 2024-04-24 18:27:08.943572
+Home visited at 2024-04-24 18:27:09.884193
+Play visited at 2024-04-24 18:27:10.760420
+Play visited at 2024-04-24 18:27:11.817723
+Home visited at 2024-04-24 18:27:13.530957
+Home visited at 2024-04-24 18:27:28.927149
+Home visited at 2024-04-24 18:27:29.894512
+Home visited at 2024-04-24 18:46:35.135081
+Start visited at 2024-04-24 18:46:36.083256
+Learn 1 visited at 2024-04-24 18:46:36.089231
+Quiz 1 component 1 visited at 2024-04-24 18:46:38.878400
+Quiz 2 component 1 visited at 2024-04-24 18:52:11.471955
+Quiz 2 component 1 visited at 2024-04-24 18:52:39.185975
+Quiz 2 component 1 visited at 2024-04-24 18:53:30.346361
+Quiz 2 component 1 visited at 2024-04-24 18:53:31.670525
+Quiz 2 component 1 visited at 2024-04-24 18:53:53.104423
+Quiz 2 component 1 visited at 2024-04-24 18:53:54.014551
+Quiz 2 component 2 visited at 2024-04-24 18:53:57.197792
+Quiz 2 component 3 visited at 2024-04-24 18:54:07.110758
+Quiz 2 component 3 visited at 2024-04-24 18:54:58.923071
+Quiz 2 component 3 visited at 2024-04-24 18:55:04.278652
+Quiz 2 component 2 visited at 2024-04-24 18:55:13.137353
+Quiz 2 component 1 visited at 2024-04-24 18:55:15.796825
+Quiz 2 component 1 visited at 2024-04-24 18:55:53.387490
+Quiz 2 component 1 visited at 2024-04-24 18:56:05.751198
+Quiz 2 component 1 visited at 2024-04-24 18:56:21.983698
+Quiz 2 component 1 visited at 2024-04-24 18:56:37.527678
+Quiz 2 component 2 visited at 2024-04-24 18:56:58.419638
+Quiz 2 component 3 visited at 2024-04-24 18:57:02.410906
+Quiz 3 component 1 visited at 2024-04-24 18:58:26.965302
+Quiz 3 component 1 visited at 2024-04-24 18:58:53.925370
+Quiz 3 component 2 visited at 2024-04-24 18:59:00.129332
+Learn 3 visited at 2024-04-24 18:59:07.762600
+Quiz 3 component 1 visited at 2024-04-24 18:59:19.394909
+Quiz 3 component 2 visited at 2024-04-24 18:59:41.730976
+Quiz 1 component 1 visited at 2024-04-24 18:59:55.332013

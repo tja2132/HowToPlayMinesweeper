@@ -42,6 +42,9 @@ $(document).ready(function() {
         let title = lesson.title || "Lesson Title";
 
         $(".lesson-title").text(`Lesson ${id}: ${title}`);
+        $(".next-lesson").text(`Up Next: ${title} Quiz`);
+
+        
         updateImageDisplay(); // Update image when the page loads
     }
 
@@ -89,7 +92,7 @@ $(document).ready(function() {
             <!-- Go to Quiz button below the image -->
             <div class="row">
               <div class="col text-center">
-                <a href="/quiz/{{ result.id }}" class="btn btn-primary" id="quizBtn">Go to Quiz</a>
+                <a href="/quiz/{{ result.id }}/1" class="btn btn-primary" id="quizBtn">Go to Quiz</a>
               </div>
             </div>
           </div>

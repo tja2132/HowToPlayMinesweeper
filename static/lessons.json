@@ -15,14 +15,24 @@
     "id":2,
     "title":"Simple Patterns",
     "img":["../static/image/Lesson-2/2-1.png", "../static/image/Lesson-2/2-2.png", "../static/image/Lesson-2/2-3.png", "../static/image/Lesson-2/2-4.png", "../static/image/Lesson-2/2-5.png", "../static/image/Lesson-2/2-6.png", "../static/image/Lesson-2/2-7.png", "../static/image/Lesson-2/2-8.png"],
-    "quiz":"../static/image/Quiz-2/2Q.png"
+    "quiz":"../static/image/Quiz-2/2Q.png",
+    "quiz_components":3,
+    "bombs":[[0,1,2],[0,1,4,7],[0,1]],
+    "length":[3,3,3],
+    "width":[3,3,3],
+    "clicked_squares":[[8],[2,3,6,8],[3,4,5,6,7]]
   },
 
   {
     "id":3,
     "title":"1-2-X",
     "img":["../static/image/Lesson-3/3-1.png"],
-    "quiz":"../static/image/Quiz-3/3Q.png"
+    "quiz":"../static/image/Quiz-3/3Q.png",
+    "quiz_components":3,
+    "bombs":[[4,5],[0,1,4,7],[0,1]],
+    "length":[3,3,3],
+    "width":[3,3,3],
+    "clicked_squares":[[0,2,6,7,8],[2,3,6,8],[3,4,5,6,7]]
   },
 
   {

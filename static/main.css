@@ -11,6 +11,9 @@ img {
     background-color: #0044cc;
 }
 
+.quiztext {
+    color: white;
+}
 .next-lesson {
   font-size: .5em;
   margin-left: 20px;
