@@ -145,6 +145,16 @@ img {
     border: 10px solid gray;
     margin-bottom: 20px;
     }
+
+    .grid-3x3 {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      flex-wrap: wrap;
+      background: white;
+      border: 10px solid gray;
+      margin-bottom: 20px;
+      }
     
     .grid div {
     width: 40px;

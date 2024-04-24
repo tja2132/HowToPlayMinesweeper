@@ -4,15 +4,297 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="../static/mines.js"></script>
 <script>
-$(document).ready(function() {
-    let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', () => {
+
     let lesson = {{ result | tojson }};
     let img = lesson.quiz;
+    let isQuizComplete = false;
+    let currentIndex = 0;
+    let completeIndex = lesson.quiz_components - 1;
+    
 
     $("#quizBtn").hide();
-  
 
-    function displayQuiz() {
+    const grid = document.querySelector('.grid-3x3');
+    // const flagsLeft = document.querySelector('#flags-left');
+
+    const spreadTimeout = 15
+    let flags = 0;
+    let squares = [];
+    let intervalRef = null; // used for timer
+    let isGameOver = false;
+  // Function to initialize the game
+  function initGame(inputArray, w, h) {
+      bombPositions = inputArray;
+      width = w;
+      height = h;
+      bombAmount = bombPositions.length;
+      squares = [];
+      flags = 0;
+      createBoard();
+  }
+
+  function clearExistingBoard() {
+    squares.forEach(square => {
+        square.removeEventListener('click', handleSquareClick);
+        square.removeEventListener('contextmenu', handleSquareRightClick);
+    });
+    grid.innerHTML = '';  // Clears the grid
+    squares = [];  // Reset the squares array
+}
+
+  
+  // Create Board
+  function createBoard() {
+
+      grid.innerHTML = ''; // Clear previous grid
+        //   grid.attr('innerHTML', 'test');
+      squares = []; // Reset squares
+
+      // Create a new div for each square in the game board
+      for (let i = 0; i < width * height; i++) {
+          const square = document.createElement('div');
+          square.setAttribute('id', i);
+          square.classList.add(bombPositions.includes(i) ? 'bomb' : 'valid');
+          console.log('appending square', square)
+          grid.append(square);
+          squares.push(square);
+
+          square.addEventListener('click', handleSquareClick);
+          square.addEventListener('contextmenu', handleSquareRightClick);
+
+
+      }
+
+      // Add numbers to the squares
+      for (let i = 0; i < squares.length; i++) {
+        if (squares[i].classList.contains('valid')) {
+            let total = 0;
+            const isLeftEdge = (i % width === 0);
+            const isRightEdge = (i % width === width - 1);
+
+            // Top-left
+            if (i > width && !isLeftEdge && squares[i - 1 - width].classList.contains('bomb')) total++;
+            // Top
+            if (i >= width && squares[i - width].classList.contains('bomb')) total++;
+            // Top-right
+            if (i > width - 1 && !isRightEdge && squares[i + 1 - width].classList.contains('bomb')) total++;
+            // Left
+            if (i > 0 && !isLeftEdge && squares[i - 1].classList.contains('bomb')) total++;
+            // Right
+            if (i < width * height - 1 && !isRightEdge && squares[i + 1].classList.contains('bomb')) total++;
+            // Bottom-left
+            if (i < width * height - width && !isLeftEdge && squares[i - 1 + width].classList.contains('bomb')) total++;
+            // Bottom
+            if (i < width * height - width && squares[i + width].classList.contains('bomb')) total++;
+            // Bottom-right
+            if (i < width * height - width - 1 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++;
+
+            squares[i].setAttribute('data', total);
+        }
+
+      }
+
+      console.log(grid)
+  }
+
+  function handleSquareClick(e) {
+    if (isGameOver) return;
+    click(this);  // 'this' refers to the square element here.
+}
+
+function handleSquareRightClick(e) {
+    e.preventDefault();
+    if (isGameOver) return;
+    addFlag(this);  // 'this' refers to the square element here.
+}
+
+
+
+  function addFlag(square) {
+    if (isGameOver) return;
+    if (!square.classList.contains('checked')) {
+        if (!square.classList.contains('flag') && flags < bombAmount) {
+            square.classList.add('flag');
+            square.innerHTML = '🚩';
+            flags++;
+            // flagsLeft.innerHTML = bombAmount - flags; // Uncomment or ensure this element exists
+            checkForWin();
+        } else if (square.classList.contains('flag')) {
+            square.classList.remove('flag');
+            square.innerHTML = '';
+            flags--;
+            // flagsLeft.innerHTML = bombAmount - flags; // Uncomment or ensure this element exists
+            checkForWin();
+        }
+    }
+}
+
+/**
+ * Clicks all squares with the given IDs.
+ * @param {Array} ids Array of IDs to be clicked.
+ */
+ function clickSquaresByIds(ids) {
+    ids.forEach(id => {
+        const square = document.getElementById(id);
+        if (square) {
+            square.click(); // Programmatically triggers the click event handler
+            console.log('Clicking ', id)
+        } else {
+            console.log("Square with ID " + id + " does not exist.");
+        }
+    });
+}
+
+  
+  // Click on square actions
+   function click(square) {
+      let currentId = square.id;
+      if (isGameOver) { return };
+      if (square.classList.contains('flag') || square.classList.contains('checked')) { return };
+      if (square.classList.contains('one') || square.classList.contains('two') || square.classList.contains('three') || square.classList.contains('four')) {
+        //chording here
+        //check adjacent bomb is flagged and click surrounding squares
+        return
+      }
+      if (square.classList.contains('bomb')) {
+        gameOver();
+      } else {
+        let total = square.getAttribute('data');
+        if (total != 0) {
+          square.classList.add('checked');
+          if (total == 1) { square.classList.add('one') }; // adding classes for colors
+          if (total == 2) { square.classList.add('two') };
+          if (total == 3) { square.classList.add('three') };
+          if (total == 4) { square.classList.add('four') };
+          if (total == 5) { square.classList.add('five') };
+          if (total == 6) { square.classList.add('six') };
+          if (total == 7) { square.classList.add('seven') };
+          if (total == 8) { square.classList.add('eight') };
+          square.innerHTML = total;
+          return
+        }
+        checkSquare(square, currentId);
+      }
+      square.classList.add('checked');
+    }
+  
+    // Check neighboring squares once square is clicked
+    // Creates the spreading effect
+    function checkSquare(square, currentId) {
+      const isLeftEdge = (currentId % width === 0)
+      const isRightEdge = (currentId % width === width -1)
+  
+      setTimeout(() => {
+        if (currentId > 0 && !isLeftEdge) {
+          const newId = squares[parseInt(currentId) - 1].id;
+          //const newId = parseInt(currentId) - 1   ....refactor
+          const newSquare = document.getElementById(newId);
+          if (!newSquare.classList.contains('bomb')) {
+            click(newSquare);
+          }
+        }
+        if (currentId > (width-1) && !isRightEdge) {
+          const newId = squares[parseInt(currentId) + 1 - width].id;
+          //const newId = parseInt(currentId) +1 -width   ....refactor
+          const newSquare = document.getElementById(newId);
+          if (!newSquare.classList.contains('bomb')) {
+            click(newSquare);
+          }
+        }
+        if (currentId >= width) {
+          const newId = squares[parseInt(currentId - width)].id;
+          //const newId = parseInt(currentId) -width   ....refactor
+          const newSquare = document.getElementById(newId);
+          if (!newSquare.classList.contains('bomb')) {
+            click(newSquare);
+          }
+        }
+        if (currentId >= (width+1) && !isLeftEdge) {
+          const newId = squares[parseInt(currentId) - 1 - width].id;
+          //const newId = parseInt(currentId) -1 -width   ....refactor
+          const newSquare = document.getElementById(newId);
+          if (!newSquare.classList.contains('bomb')) {
+            click(newSquare);
+          }
+        }
+        if (currentId <= (width*width-2) && !isRightEdge) {
+          const newId = squares[parseInt(currentId) + 1].id;
+          //const newId = parseInt(currentId) +1   ....refactor
+          const newSquare = document.getElementById(newId);
+          if (!newSquare.classList.contains('bomb')) {
+            click(newSquare);
+          }
+        }
+        if (currentId < (width*width-width) && !isLeftEdge) {
+          const newId = squares[parseInt(currentId) - 1 + width].id;
+          //const newId = parseInt(currentId) -1 +width   ....refactor
+          const newSquare = document.getElementById(newId);
+          if (!newSquare.classList.contains('bomb')) {
+            click(newSquare);
+          }
+        }
+        if (currentId <= (width*width-width-2) && !isRightEdge) {
+          const newId = squares[parseInt(currentId) + 1 + width].id;
+          //const newId = parseInt(currentId) +1 +width   ....refactor
+          const newSquare = document.getElementById(newId);
+          if (!newSquare.classList.contains('bomb')) {
+            click(newSquare);
+          }
+        }
+        if (currentId <= (width*width-width-1)) {
+          const newId = squares[parseInt(currentId) + width].id;
+          //const newId = parseInt(currentId) +width   ....refactor
+          const newSquare = document.getElementById(newId);
+          if (!newSquare.classList.contains('bomb')) {
+            click(newSquare);
+          }
+        }
+      }, spreadTimeout);
+    }
+
+    // Game Over
+    function gameOver(square) {
+      clearInterval(intervalRef);
+      isGameOver = true;
+      alert("That's a bomb! Try again");
+      location.reload();
+  
+      // Show ALL the bombs
+      squares.forEach(square => {
+        if (square.classList.contains('bomb')) {
+          square.innerHTML = '💣';
+        }
+      });
+    }
+  
+    function checkForWin() {
+    let matches = 0;
+    squares.forEach(square => {
+        if (square.classList.contains('flag') && square.classList.contains('bomb')) {
+            matches++;
+        }
+    });
+    if (matches === bombAmount && squares.filter(square => square.classList.contains('flag')).length === bombAmount) {
+        clearInterval(intervalRef); // Ensure intervalRef is defined and used if you have a timer
+        // timer.innerHTML = 'WIN'; // Uncomment or ensure this element exists
+        // emojiBtn.innerHTML = '😎'; // Uncomment or ensure this element exists
+        // result.innerHTML = 'YOU WIN!'; // Uncomment or ensure this element exists
+        isGameOver = true;
+
+        if (currentIndex == completeIndex) {
+            alert("Great job! Please proceed to the next lesson")
+        }
+        else {
+            alert("Great job! Next quiz component")
+            currentIndex += 1;
+            displayQuiz(currentIndex);
+        }
+    }
+}
+
+
+    function displayQuiz(idx) {
         let id = lesson.id || 1;
         let title = lesson.title || "Quiz Title";
 
@@ -21,10 +303,22 @@ $(document).ready(function() {
 
         $(".lesson-title").text(`${title} Quiz`);
         $("#imageDisplay").attr('src', img);
+
+        console.log("Displaying quiz component", idx);
+
+        bombs = lesson.bombs[idx]
+        clicked_squares = lesson.clicked_squares[idx]
+        l = lesson.length[idx];
+        w = lesson.width[idx];;
+
+        clearExistingBoard();
+        initGame(bombs, l, w);
+        clickSquaresByIds(clicked_squares)
     }
 
-    displayQuiz();
-    initGame([1, 25, 49], 10, 10); 
+
+    displayQuiz(currentIndex);
+
 });
 </script>
 
@@ -39,7 +333,7 @@ $(document).ready(function() {
           <button class="emoji-btn"><h1></h1></button>
           <div class="timer-box"><h1><span id="timer">0</span></h1></div>
         </div> -->
-        <div class="grid"></div>
+        <div class="grid-3x3"></div>
         <div id="result"></div>
       </div>
 </div>
