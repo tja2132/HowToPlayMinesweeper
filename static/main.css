@@ -158,6 +158,16 @@ img {
       border: 10px solid gray;
       margin-bottom: 20px;
       }
+
+      .grid-4x4 {
+        width: 180px;
+        height: 180px;
+        display: flex;
+        flex-wrap: wrap;
+        background: white;
+        border: 10px solid gray;
+        margin-bottom: 20px;
+        }
     
     .grid div {
     width: 40px;

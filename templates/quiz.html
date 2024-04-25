@@ -12,11 +12,30 @@ document.addEventListener('DOMContentLoaded', () => {
     let isQuizComplete = false;
     let currentIndex = idx;
     let completeIndex = lesson.quiz_components - 1;
-    
+
+    let grid = document.querySelector('.grid-3x3');    
+    let grid3x3 = document.querySelector('.grid-3x3');   
+    let grid4x4 = document.querySelector('.grid-4x4');     
 
     $("#quizBtn").hide();
 
-    const grid = document.querySelector('.grid-3x3');
+    console.log(lesson.gridsize)
+
+    if (lesson.gridsize === 4) {
+        grid = grid4x4;
+        grid3x3.style.visibility = 'hidden';
+        console.log('4x4')
+    }
+    else {
+        grid = grid3x3;
+        grid4x4.style.visibility = 'hidden';
+        console.log('3x3')
+
+    }
+
+    grid.style.visibility = 'visible';
+
+
     // const flagsLeft = document.querySelector('#flags-left');
 
     const spreadTimeout = 15
@@ -321,10 +340,8 @@ function handleSquareRightClick(e) {
 
         bombs = lesson.bombs[idx]
         clicked_squares = lesson.clicked_squares[idx]
-        l = lesson.length[idx];
-        w = lesson.width[idx];;
 
-        initGame(bombs, l, w);
+        initGame(bombs, lesson.gridsize, lesson.gridsize);
         clickSquaresByIds(clicked_squares)
     }
 
@@ -348,6 +365,7 @@ function handleSquareRightClick(e) {
           <div class="timer-box"><h1><span id="timer">0</span></h1></div>
         </div> -->
         <div class="grid-3x3"></div>
+        <div class="grid-4x4"></div>
         <!-- <div id="hint quiztext">Great job!</div> -->
         <a class="btn btn-outline-secondary" href="/learn/{{ result.id + 1 }}" class="btn btn-primary" id="nextLesson">Lesson {{ result.id + 1 }}</a>
         <a class="btn btn-outline-secondary" href="/quiz/{{ result.id }}/{{ nextcomponent }}" class="btn btn-primary" id="nextQuiz">Next Puzzle</a>

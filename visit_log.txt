@@ -485,3 +485,80 @@ Learn 3 visited at 2024-04-24 18:59:07.762600
 Quiz 3 component 1 visited at 2024-04-24 18:59:19.394909
 Quiz 3 component 2 visited at 2024-04-24 18:59:41.730976
 Quiz 1 component 1 visited at 2024-04-24 18:59:55.332013
+Home visited at 2024-04-24 20:14:32.012381
+Start visited at 2024-04-24 20:14:35.158871
+Learn 1 visited at 2024-04-24 20:14:35.163480
+Quiz 1 component 1 visited at 2024-04-24 20:14:38.801985
+Quiz 2 component 1 visited at 2024-04-24 20:14:43.708785
+Quiz 2 component 2 visited at 2024-04-24 20:14:54.042354
+Quiz 2 component 3 visited at 2024-04-24 20:14:59.142248
+Learn 3 visited at 2024-04-24 20:15:03.211075
+Quiz 3 component 1 visited at 2024-04-24 20:15:08.025391
+Home visited at 2024-04-24 20:18:01.979450
+Learn 2 visited at 2024-04-24 20:18:06.320917
+Quiz 1 component 1 visited at 2024-04-24 20:18:11.241193
+Quiz 2 component 1 visited at 2024-04-24 20:18:16.092701
+Quiz 2 component 1 visited at 2024-04-24 20:20:02.742810
+Quiz 1 component 1 visited at 2024-04-24 20:20:07.935050
+Quiz 1 component 1 visited at 2024-04-24 20:20:22.535148
+Quiz 1 component 1 visited at 2024-04-24 20:20:23.477631
+Quiz 1 component 1 visited at 2024-04-24 20:20:40.047231
+Quiz 1 component 1 visited at 2024-04-24 20:20:40.680557
+Quiz 2 component 1 visited at 2024-04-24 20:20:43.717550
+Quiz 2 component 1 visited at 2024-04-24 20:20:55.835926
+Quiz 2 component 1 visited at 2024-04-24 20:20:59.253979
+Quiz 2 component 1 visited at 2024-04-24 20:21:00.143998
+Quiz 2 component 1 visited at 2024-04-24 20:21:25.014706
+Quiz 2 component 1 visited at 2024-04-24 20:21:28.758500
+Quiz 2 component 1 visited at 2024-04-24 20:21:46.875064
+Quiz 2 component 1 visited at 2024-04-24 20:21:55.182299
+Quiz 2 component 1 visited at 2024-04-24 20:22:06.812080
+Quiz 2 component 1 visited at 2024-04-24 20:22:16.276703
+Quiz 3 component 1 visited at 2024-04-24 20:22:19.319261
+Quiz 3 component 1 visited at 2024-04-24 20:22:28.730844
+Quiz 3 component 1 visited at 2024-04-24 20:22:38.447636
+Quiz 3 component 1 visited at 2024-04-24 20:22:48.198761
+Quiz 3 component 1 visited at 2024-04-24 20:23:02.483599
+Quiz 3 component 1 visited at 2024-04-24 20:23:08.990560
+Quiz 3 component 1 visited at 2024-04-24 20:23:24.154524
+Quiz 3 component 1 visited at 2024-04-24 20:23:51.423742
+Quiz 3 component 1 visited at 2024-04-24 20:24:06.307214
+Quiz 3 component 1 visited at 2024-04-24 20:24:37.312774
+Quiz 3 component 1 visited at 2024-04-24 20:26:04.312921
+Quiz 3 component 1 visited at 2024-04-24 20:27:19.679037
+Quiz 2 component 1 visited at 2024-04-24 20:27:27.367408
+Quiz 3 component 1 visited at 2024-04-24 20:27:32.933517
+Quiz 3 component 1 visited at 2024-04-24 21:14:50.577532
+Quiz 3 component 1 visited at 2024-04-24 21:14:57.432683
+Quiz 3 component 2 visited at 2024-04-24 21:15:12.315793
+Quiz 3 component 2 visited at 2024-04-24 21:16:59.821349
+Quiz 3 component 2 visited at 2024-04-24 21:17:04.876117
+Quiz 3 component 2 visited at 2024-04-24 21:17:07.360955
+Quiz 3 component 2 visited at 2024-04-24 21:17:26.746267
+Quiz 3 component 2 visited at 2024-04-24 21:17:26.978693
+Quiz 3 component 2 visited at 2024-04-24 21:17:28.073482
+Quiz 3 component 1 visited at 2024-04-24 21:17:40.714746
+Quiz 3 component 1 visited at 2024-04-24 21:18:28.633656
+Quiz 3 component 2 visited at 2024-04-24 21:18:34.227761
+Quiz 3 component 2 visited at 2024-04-24 21:22:44.179864
+Quiz 3 component 2 visited at 2024-04-24 21:23:06.842726
+Quiz 3 component 2 visited at 2024-04-24 21:23:08.055164
+Quiz 3 component 2 visited at 2024-04-24 21:23:21.955774
+Quiz 3 component 2 visited at 2024-04-24 21:23:27.426595
+Quiz 3 component 2 visited at 2024-04-24 21:23:33.931547
+Quiz 3 component 2 visited at 2024-04-24 21:23:42.547110
+Quiz 3 component 2 visited at 2024-04-24 21:23:58.286909
+Quiz 3 component 2 visited at 2024-04-24 21:24:14.284740
+Learn 3 visited at 2024-04-24 21:25:06.692400
+Quiz 3 component 1 visited at 2024-04-24 21:25:08.969416
+Quiz 3 component 2 visited at 2024-04-24 21:25:13.220918
+Quiz 3 component 3 visited at 2024-04-24 21:25:25.310810
+Quiz 3 component 3 visited at 2024-04-24 21:25:33.942675
+Quiz 3 component 3 visited at 2024-04-24 21:25:45.558428
+Quiz 3 component 2 visited at 2024-04-24 21:26:09.835439
+Quiz 3 component 3 visited at 2024-04-24 21:26:27.755949
+Quiz 3 component 3 visited at 2024-04-24 21:26:39.344918
+Quiz 3 component 3 visited at 2024-04-24 21:26:49.505469
+Quiz 3 component 3 visited at 2024-04-24 21:27:32.059832
+Quiz 3 component 3 visited at 2024-04-24 21:27:37.156572
+Quiz 3 component 3 visited at 2024-04-24 21:28:01.191975
