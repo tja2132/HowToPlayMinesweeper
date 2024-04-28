@@ -36,7 +36,11 @@
     "id":4,
     "title":"Border 1-1-X",
     "img":["../static/image/Lesson-4/4-1.png", "../static/image/Lesson-4/4-2.png", "../static/image/Lesson-4/4-3.png", "../static/image/Lesson-4/4-4.png", "../static/image/Lesson-4/4-5.png"],
-    "quiz":"../static/image/Quiz-4/4Q.png"
+    "quiz":"../static/image/Quiz-4/4Q.png",
+    "quiz_components":2,
+    "bombs":[[2,5,7],[5,13]],
+    "gridsize":4,
+    "clicked_squares":[[8,9,10,11,12],[3]]
   },
 
   {
