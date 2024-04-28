@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let lesson = {{ result | tojson }};
     let idx = {{ component | tojson }} - 1;
-    let img = lesson.quiz;
+
     let isQuizComplete = false;
     let currentIndex = idx;
     let completeIndex = lesson.quiz_components - 1;
@@ -355,7 +355,6 @@ function handleSquareRightClick(e) {
         $("#backBtn").attr('href', "/current_lesson");
 
         $(".lesson-title").text(`${title} Quiz`);
-        // $("#imageDisplay").attr('src', img);
         $(".next-lesson").text(`Up Next: Lesson {{result.id}}`);
 
         
@@ -382,20 +381,11 @@ function handleSquareRightClick(e) {
 </script>
 
 <div class="container">
-    <!-- <div class="maincontent">
-        <img id="imageDisplay" alt="Lesson Image">
-    </div> -->
-
     <br><br>
     <div class="quiztext" id="quizheader"> Complete the puzzle to proceed to the next lesson!</div>
     <div class="game-container-mini">
-        <!-- <div class="top">
-          <div class="flag-box"><h1>0<span id="flags-left"></span></h1></div>
-          <button class="emoji-btn"><h1></h1></button>
-          <div class="timer-box"><h1><span id="timer">0</span></h1></div>
-        </div> -->
-        <div class="grid-3x3"></div>
-        <div class="grid-4x4"></div>
+        <div class="grid-3x3 fixedgrid"></div>
+        <div class="grid-4x4 fixedgrid"></div>
         <div id="hint quiztext"></div>
         <a class="btn btn-outline-secondary" href="/next_lesson" class="btn btn-primary" id="nextLesson">Next Lesson</a>
         <a class="btn btn-outline-secondary" href="/next_quiz_component" class="btn btn-primary" id="nextQuiz">Next Puzzle</a>

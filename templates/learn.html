@@ -8,12 +8,13 @@ $(document).ready(function() {
     let lesson = {{ result | tojson }};
     let imgs = lesson.img;
 
-    $("#quizBtn").hide();
+    $("#quizBtn").attr("disabled", true);
+
     $("#backBtn").text(`Home`);
 
     function updateImageDisplay() {
         if (currentIndex === imgs.length - 1){
-            $("#quizBtn").show();
+            $("#quizBtn").attr("disabled", false);
             $("#nextBtn").hide();
         }
         else
@@ -68,14 +69,21 @@ $(document).ready(function() {
 
     <div class="maincontent">
         <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                  <a href="/quiz/{{ result.id }}/1" class="btn btn-primary lesson-button" id="quizBtn">Go to Quiz</a>
+                </div>
+              </div>
+
             <div class="row align-items-center mb-3">
-                <br><br><br><br><br>
+                <br><br>
             </div>
 
             <div class="row align-items-center mb-3">
               <!-- Previous button on the left -->
               <div class="col-1">
                 <button id="prevBtn" class="btn btn-secondary lesson-button">←</button>
+                <!-- Previous -->
               </div>
               <!-- Image in the center with flexible space on either side -->
               <div class="col-10">
@@ -86,15 +94,12 @@ $(document).ready(function() {
               <!-- Next button on the right -->
               <div class="col-1">
                 <button id="nextBtn" class="btn btn-secondary lesson-button">→</button>
+                <!-- Next -->
               </div>
             </div>
           
             <!-- Go to Quiz button below the image -->
-            <div class="row">
-              <div class="col text-center">
-                <a href="/quiz/{{ result.id }}/1" class="btn btn-primary" id="quizBtn">Go to Quiz</a>
-              </div>
-            </div>
+          
           </div>
           
     </div>

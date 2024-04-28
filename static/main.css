@@ -11,9 +11,44 @@ img {
     background-color: #0044cc;
 }
 
+.fixedgrid {
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    transform: translateY(-50%);
+}
+
+#prevBtn {
+    position: absolute;
+    top: 50%; /* adjust as needed */
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+#nextBtn {
+    position: absolute;
+    top: 50%; /* adjust as needed */
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#quizBtn {
+    position: absolute;
+    right: 100px; /* Positions the button in the top right corner */
+    transform: translateY(-10%);
+    transform: translateX(90%);
+
+
+}
+
 .quiztext {
     color: black;
 }
+
+.getstartedbutton:hover {
+    color: black;
+}
+
 .next-lesson {
   font-size: .5em;
   margin-left: 20px;
