@@ -277,7 +277,7 @@ function handleSquareRightClick(e) {
     function gameOver(square) {
       clearInterval(intervalRef);
       isGameOver = true;
-      alert("That's a bomb! Try again");
+      alert("That's a bomb! Try again\nHint: " + lesson.hints[currentIndex]);
       location.reload();
   
       // Show ALL the bombs
@@ -366,7 +366,7 @@ function handleSquareRightClick(e) {
         </div> -->
         <div class="grid-3x3"></div>
         <div class="grid-4x4"></div>
-        <!-- <div id="hint quiztext">Great job!</div> -->
+        <div id="hint quiztext"></div>
         <a class="btn btn-outline-secondary" href="/learn/{{ result.id + 1 }}" class="btn btn-primary" id="nextLesson">Lesson {{ result.id + 1 }}</a>
         <a class="btn btn-outline-secondary" href="/quiz/{{ result.id }}/{{ nextcomponent }}" class="btn btn-primary" id="nextQuiz">Next Puzzle</a>
 
