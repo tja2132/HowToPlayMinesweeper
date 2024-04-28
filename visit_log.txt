@@ -576,3 +576,13 @@ Quiz 4 component 2 visited at 2024-04-27 21:18:20.087753
 Quiz 4 component 2 visited at 2024-04-27 21:18:38.535401
 Quiz 4 component 2 visited at 2024-04-27 21:19:00.799431
 Quiz 4 component 2 visited at 2024-04-27 21:19:08.591829
+Quiz 5 component 1 visited at 2024-04-27 21:22:07.587247
+Quiz 5 component 1 visited at 2024-04-27 21:22:16.977333
+Quiz 5 component 1 visited at 2024-04-27 21:23:07.279492
+Quiz 5 component 1 visited at 2024-04-27 21:23:08.555403
+Quiz 5 component 1 visited at 2024-04-27 21:23:20.119135
+Quiz 5 component 1 visited at 2024-04-27 21:23:28.708168
+Quiz 5 component 1 visited at 2024-04-27 21:23:48.863836
+Quiz 5 component 2 visited at 2024-04-27 21:24:05.571553
+Learn 6 visited at 2024-04-27 21:24:27.902483
+Home visited at 2024-04-27 21:24:29.240981
