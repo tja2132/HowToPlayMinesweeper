@@ -54,10 +54,13 @@ def current_lesson():
 def next_lesson():
    global current_id
    global quiz_component
-   current_id += 1
-   # reset quiz component for next lesson
-   quiz_component = 1
-   return redirect(url_for('render_lesson', id=current_id))
+   if current_id == 5:
+        return redirect(url_for('render_play'))
+   else:
+        current_id += 1
+        # reset quiz component for next lesson
+        quiz_component = 1
+        return redirect(url_for('render_lesson', id=current_id))
 
 @app.route('/next_quiz_component')
 def next_quiz_component():

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const flagsLeft = document.querySelector('#flags-left');
     const result = document.querySelector('#result');
     const timer = document.querySelector('#timer');
-    const emojiBtn = document.querySelector('.emoji-btn');
+    const emojiBtn = document.querySelector('.reset-btn');
     const spreadTimeout = 15
     let width = 10;
     let height = width
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function gameOver(square) {
       clearInterval(intervalRef);
       timer.innerHTML = 'END';
-      emojiBtn.innerHTML = '😵';
+      emojiBtn.innerHTML = 'You Lose! Reset';
       result.innerHTML = 'BOOM! Game Over!';
       isGameOver = true;
   
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (matches === bombAmount) {
           clearInterval(intervalRef);
           timer.innerHTML = 'WIN'
-          emojiBtn.innerHTML = '😎';
+          emojiBtn.innerHTML = 'You win!';
           result.innerHTML = 'YOU WIN!';
           isGameOver = true;
         }
