@@ -2,8 +2,37 @@
 
 {% block content %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../static/mines.js"></script>
 <script>
+    function log_quiz_result(result_string) {
+    console.log('attempting to post quiz result', result_string);
+    $.ajax({
+        type: "POST",
+        url: "quiz_result",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(result_string),
+        success: function (result) {
+            console.log("Success. Sent quiz results to server");
+        },
+        error: function (request, status, error) {
+            console.log("Error posting quiz result");
+            console.log(request)
+            console.log(status)
+            console.log(error)
+
+            if(request.responseText.startsWith('<!doctype')) {
+                console.log("Received HTML response, likely an error page:", request.responseText);
+            } else {
+                console.log("Error details:", error);
+                console.log("Response:", request.responseText);
+            }
+
+
+
+        }
+    });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 
     let lesson = {{ result | tojson }};
@@ -19,18 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     $("#quizBtn").hide();
 
-    console.log(lesson.gridsize)
+    console.log("Gridsize for this quiz: ", lesson.gridsize)
 
     if (lesson.gridsize === 4) {
         grid = grid4x4;
         grid3x3.style.visibility = 'hidden';
-        console.log('4x4')
     }
     else {
         grid = grid3x3;
         grid4x4.style.visibility = 'hidden';
-        console.log('3x3')
-
     }
 
     grid.style.visibility = 'visible';
@@ -76,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const square = document.createElement('div');
           square.setAttribute('id', i);
           square.classList.add(bombPositions.includes(i) ? 'bomb' : 'valid');
-          console.log('appending square', square)
           grid.append(square);
           squares.push(square);
 
@@ -115,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       }
 
+      console.log('Full grid')
       console.log(grid)
   }
 
@@ -155,11 +181,12 @@ function handleSquareRightClick(e) {
  * @param {Array} ids Array of IDs to be clicked.
  */
  function clickSquaresByIds(ids) {
+    console.log('Clicking squares ', ids)
+
     ids.forEach(id => {
         const square = document.getElementById(id);
         if (square) {
             square.click(); // Programmatically triggers the click event handler
-            console.log('Clicking ', id)
         } else {
             console.log("Square with ID " + id + " does not exist.");
         }
@@ -278,6 +305,7 @@ function handleSquareRightClick(e) {
       clearInterval(intervalRef);
       isGameOver = true;
       alert("That's a bomb! Try again\nHint: " + lesson.hints[currentIndex]);
+      log_quiz_result("Bomb clicked on " + lesson.title + "puzzle #" + currentIndex);
       location.reload();
   
       // Show ALL the bombs
@@ -308,14 +336,13 @@ function handleSquareRightClick(e) {
             $("#hint").show();
             $("#nextLesson").show();
             $("#nextQuiz").hide();
-
-
+            log_quiz_result(lesson.title + "puzzle #" + currentIndex + " complete. Quiz complete.");
         }
         else {
             $("#hint").show();
             $("#nextQuiz").show();
             $("#nextLesson").hide();
-
+            log_quiz_result(lesson.title + "puzzle #" + currentIndex + " complete");
         }
     }
 }
@@ -325,14 +352,17 @@ function handleSquareRightClick(e) {
         let title = lesson.title || "Quiz Title";
 
         $("#backBtn").text(`Back to Lesson`);
-        $("#backBtn").attr('href', "/learn/{{ result.id }}");
+        $("#backBtn").attr('href', "/current_lesson");
 
         $(".lesson-title").text(`${title} Quiz`);
         // $("#imageDisplay").attr('src', img);
-        $(".next-lesson").text(`Up Next: Lesson {{result.id+1}}`);
+        $(".next-lesson").text(`Up Next: Lesson {{result.id}}`);
 
+        
+        $("#quizheader").text('Complete all {{result.quiz_components}} puzzles to proceed to the next lesson!');
 
-        console.log("Displaying quiz component", idx);
+        console.log("Displaying quiz component", idx+1);
+
 
         $("#hint").hide();
         $("#nextLesson").hide();
@@ -357,7 +387,7 @@ function handleSquareRightClick(e) {
     </div> -->
 
     <br><br>
-    <div class="quiztext"> Complete the puzzle to proceed to the next lesson!</div>
+    <div class="quiztext" id="quizheader"> Complete the puzzle to proceed to the next lesson!</div>
     <div class="game-container-mini">
         <!-- <div class="top">
           <div class="flag-box"><h1>0<span id="flags-left"></span></h1></div>
@@ -367,8 +397,8 @@ function handleSquareRightClick(e) {
         <div class="grid-3x3"></div>
         <div class="grid-4x4"></div>
         <div id="hint quiztext"></div>
-        <a class="btn btn-outline-secondary" href="/learn/{{ result.id + 1 }}" class="btn btn-primary" id="nextLesson">Lesson {{ result.id + 1 }}</a>
-        <a class="btn btn-outline-secondary" href="/quiz/{{ result.id }}/{{ nextcomponent }}" class="btn btn-primary" id="nextQuiz">Next Puzzle</a>
+        <a class="btn btn-outline-secondary" href="/next_lesson" class="btn btn-primary" id="nextLesson">Next Lesson</a>
+        <a class="btn btn-outline-secondary" href="/next_quiz_component" class="btn btn-primary" id="nextQuiz">Next Puzzle</a>
 
         <div id="result"></div>
       </div>
