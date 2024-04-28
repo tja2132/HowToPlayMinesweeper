@@ -41,7 +41,10 @@ def render_lesson(id):
 @app.route('/quiz/<id>/<component>', methods=['GET', 'POST'])
 def render_quiz(id, component):
     result = get_data_by_id(id)
-    nextcomponent=str(int(component)+1)
+    try:
+        nextcomponent=str(int(component)+1)
+    except:
+        nextcomponent=1
     log_visit(f'Quiz {id} component {component}')
     return render_template('quiz.html', result=result, id=id, component=component, nextcomponent=nextcomponent)  
 
