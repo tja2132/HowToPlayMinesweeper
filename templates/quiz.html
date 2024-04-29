@@ -351,11 +351,20 @@ function handleSquareRightClick(e) {
         let id = lesson.id || 1;
         let title = lesson.title || "Quiz Title";
 
+        let upnext = lesson.up_next || "Next Lesson"
+        let nextid = id + 1;
+
         $("#backBtn").text(`Back to Lesson`);
         $("#backBtn").attr('href', "/current_lesson");
 
         $(".lesson-title").text(`${title} Quiz`);
-        $(".next-lesson").text(`Up Next: Lesson {{result.id}}`);
+        if (id < 5) {
+          $(".next-lesson").text(`Up Next: Lesson ${nextid}, ${upnext}`);
+        }
+        else { 
+          $(".next-lesson").text(`Up Next: ${upnext}`);
+        }
+
 
         
         $("#quizheader").text('Complete all {{result.quiz_components}} puzzles to proceed to the next lesson!');

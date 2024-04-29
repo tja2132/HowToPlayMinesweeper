@@ -29,11 +29,6 @@ $(document).ready(function() {
           $("#prevBtn").show();
         }
 
-       
-     
-        
-        
-
         // Update the source of the image element
         $("#imageDisplay").attr('src', imgs[currentIndex]);
     }
@@ -44,7 +39,6 @@ $(document).ready(function() {
 
         $(".lesson-title").text(`Lesson ${id}: ${title}`);
         $(".next-lesson").text(`Up Next: ${title} Quiz`);
-
         
         updateImageDisplay(); // Update image when the page loads
     }
